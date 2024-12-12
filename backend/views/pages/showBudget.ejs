@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Budget</title>
+    <link rel="stylesheet" href="/css/showBudget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <h1>My Budget Dashboard</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/budget">Budget</a>
+                <a href="/expenses">Expenses</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2>Your Budget Overview</h2>
+
+        <!-- Budget Summary -->
+        <div class="budget-summary">
+            <h3>Budget Summary</h3>
+            <p><strong>Total Budget:</strong> $5000</p>
+            <p><strong>Total Spent:</strong> $2000</p>
+            <p><strong>Total Remaining:</strong> $3000</p>
+        </div>
+
+        <!-- Table to display budget categories -->
+        <div class="budget-table">
+            <h3>Budget Details</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Budgeted Amount</th>
+                        <th>Spent Amount</th>
+                        <th>Remaining Amount</th>
+                        <th>Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Food</td>
+                        <td>$1200</td>
+                        <td>$800</td>
+                        <td>$400</td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 67%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Travel</td>
+                        <td>$1400</td>
+                        <td>$1200</td>
+                        <td>$800</td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Entertainment</td>
+                        <td>$800</td>
+                        <td>$500</td>
+                        <td>$300</td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 62.5%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Clothes</td>
+                        <td>$500</td>
+                        <td>$300</td>
+                        <td>$200</td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Health</td>
+                        <td>$300</td>
+                        <td>$150</td>
+                        <td>$150</td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Education</td>
+                        <td>$500</td>
+                        <td>$50</td>
+                        <td>$50</td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Television</td>
+                        <td>$300</td>
+                        <td>$350</td>
+                        <td>$250</td>
+                        <td>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 58.33%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <!-- Pie Chart -->
+            <div class="chart-container">
+                <h3>Budget Distribution</h3>
+                <canvas id="budgetPieChart"></canvas>
+            </div>
+        </div>
+
+        <a href="/budget/add" class="button add-button">Add New Budget</a>
+        <a href="/features" class="button back-button">Back</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Your Finance Tracker</p>
+    </footer>
+
+    <!-- Include Chart.js and Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/showBudget.js"></script>
+</body>
+
+</html>

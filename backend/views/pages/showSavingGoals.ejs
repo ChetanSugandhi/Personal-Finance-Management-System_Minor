@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Saving Goals</title>
+  <link rel="stylesheet" href="/css/showSavingGoals.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
+</head>
+<body>
+  <h1>All Your Saving Goals</h1>
+
+  <!-- Table displaying all saving goals -->
+  <table>
+    <thead>
+      <tr>
+        <th>Goal Name</th>
+        <th>Target Amount</th>
+        <th>Current Savings</th>
+        <th>Remaining Amount</th>
+        <th>Deadline</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% newGoal.forEach(goal => { %>
+        <tr>
+          <td><%= goal.goalName %></td>
+          <td><%= goal.targetAmount %></td>
+          <td><%= goal.currentSavings %></td>
+          <td><%= goal.remainingAmount %></td>
+          <td><%= goal.deadline ? new Date(goal.deadline).toLocaleDateString() : 'N/A' %></td>
+          <td><%= goal.notes %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <!-- Savings Progress Section -->
+  <section class="progress-section">
+    <h2>Your Progress</h2>
+
+    <!-- Circle Graph Section -->
+    <div class="circle-graph">
+      <div class="circle-text">
+        <p>Total: ₹<span id="total-amount"></span></p>
+        <p>Spent: ₹<span id="spent-amount"></span></p>
+        <p>Remaining: ₹<span id="remaining-amount"></span></p>
+      </div>
+    </div>
+
+    <!-- Progress Bar Section -->
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- Insights Section -->
+    <section class="insights-section">
+      <h2>Additional Insights</h2>
+      <div class="insight-card">
+        <p><strong>Days Left:</strong> <span id="days-left"></span></p>
+      </div>
+      <div class="insight-card">
+        <p><strong>Max Daily Spending:</strong> ₹<span id="daily-spending-limit"></span></p>
+      </div>
+      <div class="insight-card">
+        <p><strong>Daily Savings Required:</strong> ₹<span id="daily-savings-suggestion"></span></p>
+      </div>
+      <div class="insight-card">
+        <p><strong>Priority:</strong> <span id="goal-priority"></span></p>
+      </div>
+      <div class="insight-card">
+        <p><strong>Goal Completion:</strong> <span id="goal-percentage"></span>%</p>
+      </div>
+    </section>
+
+    <!-- Line Graph Section -->
+    <h2>Savings Trend</h2>
+    <canvas id="lineChart" width="400" height="200"></canvas>
+  </section>
+
+    <!-- Button to add more expenses -->
+    <a href="/savings"><button>Add more Expense</button></a>
+    <a href="/features"><button>Back</button></a>
+    
+  <script src="/js/showSavingGoals.js"></script> <!-- Link to JS file -->
+</body>
+</html>

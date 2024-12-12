@@ -1,0 +1,166 @@
+/* General Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #2a3a59;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    font-size: 16px;
+}
+
+.navbar ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Tax Calculator Section */
+.tax-calculator {
+    background-color: #2a3a59;
+    color: #fff;
+    padding: 50px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.tax-calculator h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.tax-calculator p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Tax Calculator Form Styling */
+.tax-form {
+    background-color: #1f2a44;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tax-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.tax-form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffcc00;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tax-form input,
+.tax-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #333;
+}
+
+.tax-form input:focus,
+.tax-form select:focus {
+    outline-color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+.tax-form .btn-submit {
+    background-color: #ffcc00;
+    color: #2a3a59;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.tax-form .btn-submit:hover {
+    background-color: #f2b900;
+}
+
+/* Tax Result */
+.tax-result {
+    background-color: #1f2a44;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #1f2a44;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .tax-calculator {
+        padding: 30px 20px;
+    }
+
+    .tax-form {
+        padding: 20px;
+    }
+
+    .tax-form .form-group label {
+        font-size: 14px;
+    }
+
+    .tax-form .btn-submit {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Expenses</title>
+  <link rel="stylesheet" href="/css/showExpense.css">
+</head>
+
+<body>
+  <!-- Include header -->
+
+  <div class="container">
+    <h1>Your Expenses</h1>
+
+    <!-- Table to display expenses -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Payment Method</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% newExpense.forEach(expense => { %>
+          <tr>
+            <td><%= expense.name %></td>
+            <td><%= expense.amount %></td>
+            <td><%= expense.category %></td>
+            <td><%= expense.date.toISOString().split('T')[0] %></td>
+            <td><%= expense.paymentMethod %></td>
+            <td><%= expense.notes %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+      
+    </table>
+
+    <!-- Bar Graph Section -->
+    <div class="chart-section">
+      <h2>Spending Trend</h2>
+      <canvas id="spendingTrendGraph"></canvas>
+    </div>
+
+    <a href="/expenses"><button>Add more Expense</button></a>
+    <a href="/features"><button>Back</button></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/showExpense.js"></script>
+
+</body>
+
+</html>

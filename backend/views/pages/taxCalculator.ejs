@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator | SpendSmart</title>
+    <link rel="stylesheet" href="/css/taxCalculator.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Tax Calculator Section -->
+    <section class="tax-calculator">
+        <div class="container">
+            <h1>Tax Calculator</h1>
+            <p>Use our advanced tax calculator to estimate your tax liability based on your income and deductions.</p>
+
+            <!-- Tax Calculator Form -->
+            <form id="taxCalculatorForm" class="tax-form">
+                <div class="form-group">
+                    <label for="income">Annual Income ($)</label>
+                    <input type="number" id="income" name="income" required placeholder="Enter your income">
+                </div>
+                <div class="form-group">
+                    <label for="deductions">Deductions ($)</label>
+                    <input type="number" id="deductions" name="deductions" placeholder="Enter your deductions (optional)">
+                </div>
+                <div class="form-group">
+                    <label for="investment">Investment Income ($)</label>
+                    <input type="number" id="investment" name="investment" placeholder="Enter your investment income (optional)">
+                </div>
+                <div class="form-group">
+                    <label for="taxRate">Tax Rate (%)</label>
+                    <select id="taxRate" name="taxRate" required>
+                        <option value="10">10% (Up to $50,000)</option>
+                        <option value="20">20% ($50,001 - $100,000)</option>
+                        <option value="30">30% (Above $100,000)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Calculate Tax</button>
+            </form>
+
+            <!-- Tax Calculation Result -->
+            <div id="taxResult" class="tax-result" style="display: none;">
+                <h3>Tax Payable: <span id="taxAmount">$0.00</span></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 SpendSmart. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle form submission -->
+    <script>
+        document.getElementById('taxCalculatorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get user inputs
+            const income = parseFloat(document.getElementById('income').value);
+            const deductions = parseFloat(document.getElementById('deductions').value) || 0;
+            const investment = parseFloat(document.getElementById('investment').value) || 0;
+            const taxRate = parseFloat(document.getElementById('taxRate').value);
+
+            // Calculate taxable income
+            const taxableIncome = income + investment - deductions;
+
+            // Apply tax rate based on taxable income
+            let taxPayable = 0;
+
+            if (taxableIncome <= 50000) {
+                taxPayable = taxableIncome * 0.10;
+            } else if (taxableIncome <= 100000) {
+                taxPayable = taxableIncome * 0.20;
+            } else {
+                taxPayable = taxableIncome * 0.30;
+            }
+
+            // Display tax result
+            document.getElementById('taxAmount').textContent = `$${taxPayable.toFixed(2)}`;
+            document.getElementById('taxResult').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> Features</title> <!-- Dynamic title -->
+  <link rel="stylesheet" href="/css/features.css"> <!-- Correct path for CSS -->
+</head>
+
+<body>
+    <div class="box1">
+        <div class="sticky_nav">
+            <div class="logo">
+                 <img src="/image/logo.png" alt=""> 
+                <h2>SpendSmart</h2>
+            </div>
+            <div class="nav">
+                <a href="/"><%= homeText %></a> 
+                <a href="/about">About</a>
+                <a href="/features"><%= featuresText %></a> 
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Features of Personal Finance Management System</h1>
+    <p>Our system helps you effectively manage your finances with these core features:</p>
+  </header>
+
+  <!-- Features Section -->
+  <main class="features-section">
+    <!-- Expense Tracker -->
+    <div class="feature" onclick="redirectToPage('expense-tracker.html')">
+      <img src="/image/ExpenseTracker.jpg" alt="">
+      <h2>Expense Tracker</h2>
+      <p>Keep track of your daily expenses, analyze spending patterns, and manage your finances more effectively.</p>
+      <a href="/expenses"><button>Go to Expense Tracker</button></a> 
+    </div>
+
+    <!-- Budget Management -->
+    <div class="feature" onclick="redirectToPage('budget-management.html')">
+      <img src="/image/Budget.webp" alt="">
+      <h2>Budget Management</h2>
+      <p>Set and manage budgets on a weekly, monthly, or yearly basis. Get insights into your spending and stay on
+        track.</p>
+      <a href="/budgetHome"><button>Go to Budget Management</button></a> 
+    </div>
+
+    <!-- Saving Goals -->
+    <div class="feature" onclick="redirectToPage('saving-goals.html')">
+      <img src="/image/Saving Goals.jpg" alt=""> 
+      <h2>Saving Goals</h2>
+      <p>Define your savings goals and track your progress towards achieving them. Stay motivated and reach your
+        targets!</p>
+      <a href="/savings"><button>Go to Saving Goals</button></a>
+    </div>
+
+    <a href="/tax"><button>Tax Calcutor</button></a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <img src="/image/footer.png" alt="Logo"> 
+      <div class="footer-copyright">
+        <p>&copy; 2024 Finesse, Inc. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Guides</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script> 
+</body>
+
+</html>
